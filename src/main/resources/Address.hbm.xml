@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="beans">
+
+    <class name="beans.Address" table="address">
+        <id name="addressId" column="address_id">
+            <generator class="increment"/>
+        </id>
+        <property name="zip" type="int" column="zip"/>
+        <property name="country" type="java.lang.String" column="country"/>
+        <property name="city" type="java.lang.String" column="city"/>
+        <property name="district" type="java.lang.String" column="district"/>
+        <property name="street" type="java.lang.String" column="street"/>
+
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/java/DAO/AddressDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/DAO/Factory.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/DAO/GroupDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/DAO/Implementation/AddressDAOImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/DAO/Implementation/GroupDAOImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/DAO/Implementation/UserDAOImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/DAO/UserDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/Main.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/beans/Address.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/beans/Group.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/beans/User.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/persistence/HibernateUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/validaton/BeanValidator.java" charset="UTF-8" />
+  </component>
+</project>

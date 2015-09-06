@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="beans">
+
+    <class name="User" table="users">
+        <id name="userId" column="user_id" type="int">
+            <generator class="increment"/>
+        </id>
+        <property name="groupId" type="int" column="group_id"/>
+        <property name="addressId" type="int" column="address_id"/>
+        <property name="firstName" type="java.lang.String" column="firstName"/>
+        <property name="lastName" type="java.lang.String" column="lastName"/>
+        <property name="username" type="java.lang.String" column="username"/>
+        <property name="password" type="java.lang.String" column="password"/>
+        <property name="email" type="java.lang.String" column="email"/>
+        <property name="birthday" type="java.util.Date" column="birthday"/>
+        <property name="active" type="boolean" column="isActive"/>
+        <property name="createTS" type="java.util.Date" column="createTs"/>
+        <property name="lastUpdateTS" type="java.util.Date" column="lastUpdateTs"/>
+
+    </class>
+
+</hibernate-mapping>
