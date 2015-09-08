@@ -6,10 +6,10 @@
 //import beans.Address;
 //import beans.Group;
 //import beans.User;
-//import org.hibernate.Session;
-//import org.hibernate.search.FullTextSession;
-//import org.hibernate.search.Search;
-//import persistence.HibernateUtil;
+import org.hibernate.Session;
+import org.hibernate.search.FullTextSession;
+import org.hibernate.search.Search;
+import persistence.HibernateUtil;
 
 import java.sql.SQLException;
 import java.sql.Timestamp;
@@ -21,16 +21,21 @@ import java.util.Date;
  */
 public class Main {
     public static void main(String[] args) throws SQLException {
+        Session session= null;
 
-//        try {
-//             Session session = HibernateUtil.getSessionFactory().openSession();
-//            FullTextSession fullTextSession = Search.getFullTextSession(session);
-//            fullTextSession.createIndexer().startAndWait();
-            //session.close();
+        try {
+              session = HibernateUtil.getSessionFactory().openSession();
+            FullTextSession fullTextSession = Search.getFullTextSession(session);
+            fullTextSession.createIndexer().startAndWait();
+            session.close();
             //addressDAO.addAddress(address);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
 
     }
 }

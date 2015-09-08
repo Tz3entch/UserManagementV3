@@ -54,6 +54,8 @@
     <orderEntry type="library" name="Maven: org.apache.lucene:lucene-analyzers-common:4.10.4" level="project" />
     <orderEntry type="library" name="Maven: org.apache.lucene:lucene-facet:4.10.4" level="project" />
     <orderEntry type="library" name="Maven: org.apache.lucene:lucene-queries:4.10.4" level="project" />
+    <orderEntry type="library" name="Maven: javax.el:javax.el-api:3.0.1-b04" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish:javax.el:3.0.1-b04" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate:hibernate-entitymanager:5.0.0.Final" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.jersey.bundles:jaxrs-ri:2.21" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.jersey.core:jersey-common:2.21" level="project" />

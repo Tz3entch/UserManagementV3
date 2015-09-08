@@ -1,16 +1,17 @@
 package beans;
 
+import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-//import org.hibernate.search.annotations.*;
+import org.hibernate.search.annotations.*;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 import java.io.Serializable;
 import java.util.Date;
 
-//@Indexed
+@Indexed
 @XmlRootElement(name = "user")
 public class User implements Bean , Serializable {
 
@@ -23,12 +24,12 @@ public class User implements Bean , Serializable {
 
     private int addressId;
 
-//    @Field
+    @Field
     @NotBlank
     @Size(min =1 , max = 16)
     private String firstName;
 
-//    @Field
+    @Field
     @NotBlank
     @Size(min =1 , max = 16)
     private String lastName;
@@ -41,14 +42,14 @@ public class User implements Bean , Serializable {
     @Size(min =6 , max = 20)
     private String password;
 
-//    @Field
+    @Field
     @Email
     private String email;
 
 
-//    @Field(index = Index.YES, analyze = Analyze.NO, store = Store.YES)
-//    @DateBridge(resolution = Resolution.DAY)
-//    @Past
+    @Field(index = Index.YES, analyze = Analyze.NO, store = Store.YES)
+    @DateBridge(resolution = Resolution.DAY)
+    @Past
     private Date birthday;
 
     private boolean active;
