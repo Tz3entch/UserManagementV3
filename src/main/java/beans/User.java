@@ -15,7 +15,7 @@ import java.util.Date;
 @XmlRootElement(name = "user")
 public class User implements Bean , Serializable {
 
-
+    @DocumentId
     private int userId;
 
 
