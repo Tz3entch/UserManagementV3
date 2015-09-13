@@ -6,6 +6,10 @@ import org.dozer.DozerBeanMapper;
 import org.dozer.Mapper;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.search.FullTextSession;
+import org.hibernate.search.Search;
+import org.hibernate.search.query.dsl.QueryBuilder;
 import persistence.HibernateUtil;
 import javax.ws.rs.*;
 import javax.ws.rs.core.GenericEntity;
@@ -272,40 +276,41 @@ public class UserDAOImpl implements UserDAO{
         return Response.ok(mappedUser).build();
     }
 
-//    @GET
-//    @Path("/search/{text}")
-////    @Consumes("application/x-www-form-urlencoded")
-//    @Produces(MediaType.APPLICATION_XML)
-//    public Response search(@PathParam("text")String text) {
-//        Session session = null;
-//        List result = null;
-//        try {
-//            session = HibernateUtil.getSessionFactory().openSession();
-//            FullTextSession fullTextSession = Search.getFullTextSession(session);
-//            Transaction tx = fullTextSession.beginTransaction();
-//            QueryBuilder qb = fullTextSession.getSearchFactory()
-//                    .buildQueryBuilder().forEntity(User.class).get();
-//            org.apache.lucene.search.Query query = qb
-//                    .keyword()
-//                    .onFields("firstName", "lastName", "email", "birthday")
-//                    .matching(text)
-//                    .createQuery();
-//            org.hibernate.Query hibQuery =
-//                    fullTextSession.createFullTextQuery(query, User.class);
-//            result = hibQuery.list();
-//            tx.commit();
-//        } catch (Exception e) {
-//            System.err.println("search failed, " + e.getMessage());
-//            return Response.serverError().entity("search failed").build();
-//        } finally {
-//            if (session != null && session.isOpen()) {
-//                session.close();
-//            }
-//        }
-//        GenericEntity entity = new GenericEntity<List<User>>(result) {};
-//        return Response.ok(entity).build();
-//
-//    }
+    @GET
+    @Path("/search/{text}")
+//    @Consumes("application/x-www-form-urlencoded")
+    @Produces(MediaType.APPLICATION_XML)
+    public Response search(@PathParam("text")String text) {
+        Session session = null;
+        List result = null;
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            FullTextSession fullTextSession = Search.getFullTextSession(session);
+            Transaction tx = fullTextSession.beginTransaction();
+            QueryBuilder qb = fullTextSession.getSearchFactory()
+                    .buildQueryBuilder().forEntity(User.class).get();
+            org.apache.lucene.search.Query query = qb
+                    .keyword()
+                    .onFields("firstName", "lastName", "email", "birthday")
+                    .ignoreFieldBridge()
+                    .matching(text)
+                    .createQuery();
+            org.hibernate.Query hibQuery =
+                    fullTextSession.createFullTextQuery(query, User.class);
+            result = hibQuery.list();
+            tx.commit();
+        } catch (Exception e) {
+            System.err.println("search failed, " + e.getMessage());
+            return Response.serverError().entity("search failed").build();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+        GenericEntity entity = new GenericEntity<List<User>>(result) {};
+        return Response.ok(entity).build();
+
+    }
 }
 //TODO add search for firstName, LastName, email, birthday
 //TODO validate user

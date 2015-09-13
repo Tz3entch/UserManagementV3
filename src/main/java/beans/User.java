@@ -47,8 +47,8 @@ public class User implements Bean , Serializable {
     private String email;
 
 
-    @Field(index = Index.YES, analyze = Analyze.NO, store = Store.YES)
-    @DateBridge(resolution = Resolution.DAY)
+    @Field(index=Index.YES, analyze=Analyze.NO, store=Store.YES)
+    @DateBridge(resolution = Resolution.DAY, encoding = EncodingType.STRING)
     @Past
     private Date birthday;
 
