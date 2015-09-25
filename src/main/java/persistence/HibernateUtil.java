@@ -3,9 +3,6 @@ package persistence;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-/**
- * Created by Сережа on 24.08.2015.
- */
 public class HibernateUtil {
     private static final SessionFactory sessionFactory;
     static {

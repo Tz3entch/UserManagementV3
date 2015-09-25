@@ -5,9 +5,6 @@ import beans.Address;
 import javax.ws.rs.core.Response;
 import java.sql.SQLException;
 
-/**
- * Created by Сережа on 24.08.2015.
- */
 public interface AddressDAO {
     public Response addAddress(int userId, int zip, String country, String city, String district, String street) throws SQLException;
     public Response updateAddress(int adressId, int zip, String country, String city, String district, String street) throws SQLException;

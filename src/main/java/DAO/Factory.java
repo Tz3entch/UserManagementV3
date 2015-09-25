@@ -4,9 +4,6 @@ import DAO.Implementation.AddressDAOImpl;
 import DAO.Implementation.GroupDAOImpl;
 import DAO.Implementation.UserDAOImpl;
 
-/**
- * Created by Сережа on 24.08.2015.
- */
 public class Factory {
 
     private static AddressDAO addressDAO = null;

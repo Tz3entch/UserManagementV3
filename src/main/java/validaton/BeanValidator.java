@@ -7,9 +7,6 @@ import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 import java.util.Set;
 
-/**
- * Created by Сережа on 25.08.2015.
- */
 public class BeanValidator {
     private static Validator validator;
     static {

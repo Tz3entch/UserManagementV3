@@ -13,14 +13,15 @@ import persistence.HibernateUtil;
 
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 
-/**
- * Created by Сережа on 24.08.2015.
- */
 public class Main {
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException, ParseException {
         Session session= null;
 
         try {
@@ -36,6 +37,5 @@ public class Main {
                 session.close();
             }
         }
-
     }
 }

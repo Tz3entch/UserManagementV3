@@ -8,9 +8,6 @@ import java.sql.SQLException;
 import java.util.Collection;
 import java.util.Date;
 
-/**
- * Created by Сережа on 24.08.2015.
- */
 public interface UserDAO {
     public Response addUser(String firstName, String lastName, String username,
                             String password, String email, String birthday) throws SQLException;

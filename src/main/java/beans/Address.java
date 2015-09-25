@@ -1,6 +1,5 @@
 package beans;
 
-//import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.validation.constraints.NotNull;

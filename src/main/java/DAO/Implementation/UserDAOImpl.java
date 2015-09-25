@@ -21,10 +21,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
-/**
- * Created by Сережа on 24.08.2015.
- */
 @Path("/users")
 public class UserDAOImpl implements UserDAO{
 
@@ -38,6 +36,7 @@ public class UserDAOImpl implements UserDAO{
         Session session = null;
         User mappedUser = null;
         DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
+        df.setTimeZone(TimeZone.getTimeZone("UTC"));
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
@@ -76,6 +75,7 @@ public class UserDAOImpl implements UserDAO{
         Session session = null;
         User mappedUser = null;
         DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
+        df.setTimeZone(TimeZone.getTimeZone("UTC"));
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             User user = session.load(User.class, userId);
@@ -312,5 +312,4 @@ public class UserDAOImpl implements UserDAO{
 
     }
 }
-//TODO add search for firstName, LastName, email, birthday
 //TODO validate user

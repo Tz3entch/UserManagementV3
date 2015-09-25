@@ -14,9 +14,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Сережа on 24.08.2015.
- */
 @Path("/groups")
 public class GroupDAOImpl implements GroupDAO {
 

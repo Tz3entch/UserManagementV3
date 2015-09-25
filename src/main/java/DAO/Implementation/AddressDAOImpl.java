@@ -13,7 +13,6 @@ import java.sql.SQLException;
 import org.dozer.DozerBeanMapper;
 import org.dozer.Mapper;
 
-
 @Path("/address")
 public class AddressDAOImpl implements AddressDAO {
 

@@ -10,6 +10,7 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 import java.io.Serializable;
 import java.util.Date;
+import org.hibernate.search.bridge.builtin.NumericEncodingDateBridge;
 
 @Indexed
 @XmlRootElement(name = "user")
@@ -48,7 +49,7 @@ public class User implements Bean , Serializable {
 
 
     @Field(index=Index.YES, analyze=Analyze.NO, store=Store.YES)
-    @DateBridge(resolution = Resolution.DAY, encoding = EncodingType.STRING)
+    @DateBridge(resolution = Resolution.DAY/*yyyyMMdd*/, encoding = EncodingType.STRING)
     @Past
     private Date birthday;
 
